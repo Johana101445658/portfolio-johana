@@ -294,39 +294,71 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
-        <div class="section-content">
-            <h2>Contact</h2>
-            <form id="contact-form" onsubmit="return showMessageSent(event)">
-                <div class="row">
-                    <div class="col">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="col">
-                        <input type="email" name="email" placeholder="Email Address" required>
-                    </div>
+<section id="contact" class="contact">
+    <div class="section-content">
+        <h2>Contact</h2>
+        <form action="https://formsubmit.co/johana1221@hotmail.com" method="POST" id="contact-form">
+            <!-- Campo oculto para el destinatario -->
+            <input type="hidden" name="_to" value="johana1221@hotmail.com">
+            <!-- Evita spam -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- Redirección después de enviar (opcional) -->
+            <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
+            
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="name" placeholder="Your Name" required>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                    </div>
+                <div class="col">
+                    <input type="email" name="email" placeholder="Email Address" required>
                 </div>
-                <button type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-            </form>
-            <!-- Message confirmation -->
-            <p id="message-sent" style="display:none; color: green; font-weight: bold; margin-top: 20px;">
-                Your message has been sent successfully!
-            </p>
-        </div>
-    </section>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+            </div>
+            <button type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        
+        <!-- Mensaje de confirmación -->
+        <p id="message-sent" style="display:none; color: green; font-weight: bold; margin-top: 20px;">
+            Your message has been sent successfully!
+        </p>
+    </div>
+</section>
 
-    <script>
-        function showMessageSent(event) {
-            event.preventDefault();
-            document.getElementById('message-sent').style.display = 'block';
-            document.getElementById('contact-form').reset();
-            return false;
+<script>
+// Función para mostrar mensaje de confirmación
+function showMessageSent(event) {
+    event.preventDefault();
+    const form = event.target;
+    
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
         }
-    </script>
+    })
+    .then(response => {
+        if (response.ok) {
+            document.getElementById('message-sent').style.display = 'block';
+            form.reset();
+            
+            // Oculta el mensaje después de 5 segundos
+            setTimeout(() => {
+                document.getElementById('message-sent').style.display = 'none';
+            }, 5000);
+        } else {
+            throw new Error('Error al enviar el mensaje');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Hubo un error al enviar tu mensaje. Por favor inténtalo de nuevo.');
+    });
+}
+</script>
 </body>
 </html>

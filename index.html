@@ -1,44 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- MENU ENCABEZADO -->
-    <div class="contenedor-header">
+    <!-- HEADER MENU -->
+    <div class="header-container">
         <header>
             <div class="logo">
                 <a href="#">Johana</a>
             </div>
             <nav id="nav">
                 <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">HOME</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">ABOUT ME</a></li>
-                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
-                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-                    <li><a href="#contacto" onclick="seleccionar()">CONTACT</a></li>
+                    <li><a href="#home" onclick="select()">HOME</a></li>
+                    <li><a href="#about" onclick="select()">ABOUT ME</a></li>
+                    <li><a href="#skills" onclick="select()">SKILLS</a></li>
+                    <li><a href="#resume" onclick="select()">RESUME</a></li>
+                    <li><a href="#contact" onclick="select()">CONTACT</a></li>
                 </ul>
             </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+            <div class="nav-responsive" onclick="toggleMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </header>
     </div>
 
-    <!-- SECCION INICIO -->
-    <section id="inicio" class="inicio">
-        <div class="contenido-banner">
-            <div class="contenedor-img">
+    <!-- HOME SECTION -->
+    <section id="home" class="home">
+        <div class="banner-content">
+            <div class="img-container">
                 <img src="img/hero.png" alt="">
             </div>
             <h1>Johana Romero</h1>
             <h2>Diploma in Business Management and Design Technology - Advanced Diploma in Computer Programming and Analysis</h2>
-            <div class="redes">
+            <div class="social-media">
                 <a href="https://x.com/LizetteE10560"><i class="fa-brands fa-twitter"></i></a>
                 <a href="https://www.linkedin.com/in/lizettejohanaromero/"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="#"><i class="fa-solid fa-rss"></i></a>
@@ -46,23 +46,23 @@
         </div>
     </section>
 
-    <!-- SECCION SOBRE MI -->
-    <section id="sobremi" class="sobremi">
-        <div class="contenido-seccion">
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="about">
+        <div class="section-content">
             <h2>About Me</h2>
-            <p><span>Hello, I'm Johana Romero.</span>  I’m a passionate Technologist in Business Management and Design. I enjoy turning complex problems into simple, beautiful, and intuitive designs. I’m constantly learning and improving to stay up-to-date with the latest technologies and trends.</p>
+            <p><span>Hello, I'm Johana Romero.</span> I’m a passionate Technologist in Business Management and Design. I enjoy turning complex problems into simple, beautiful, and intuitive designs. I’m constantly learning and improving to stay up-to-date with the latest technologies and trends.</p>
 
-            <div class="fila">
-                <!-- datos personales -->
+            <div class="row">
+                <!-- Personal Info -->
                 <div class="col">
                     <h3>Personal Info</h3>
                     <ul>
-                                               <li>
+                        <li>
                             <strong>Phone:</strong>
                             647 2914782
                         </li>
                         <li>
-                            <strong>Email</strong>
+                            <strong>Email:</strong>
                             johana1221@hotmail.com
                         </li>
                         <li>
@@ -76,49 +76,48 @@
                     </ul>
                 </div>
 
-                <!-- intereses -->
+                <!-- Interests -->
                 <div class="col">
-                    <h3>Interests </h3>
-                    <div class="contenedor-intereses">
-                        <div class="interes">
+                    <h3>Interests</h3>
+                    <div class="interests-container">
+                        <div class="interest">
                             <i class="fa-solid fa-gamepad"></i>
                             <span>Gaming</span>
                         </div>
-                        <div class="interes">
+                        <div class="interest">
                             <i class="fa-solid fa-headphones"></i>
                             <span>Music</span>
                         </div>
-                        <div class="interes">
+                        <div class="interest">
                             <i class="fa-solid fa-plane"></i>
                             <span>Travel</span>
                         </div>
-                        <div class="interes">
+                        <div class="interest">
                             <i class="fa-solid fa-book"></i>
                             <span>Books</span>
                         </div>
-                        
                     </div>
                 </div>
             </div>
             <div class="button-container">
-                <!-- Botón para ver el CV -->
+                <!-- Button to view resume -->
                 <button onclick="document.getElementById('cvViewer').style.display='block';">
                     View Resume <i class="fa-solid fa-eye"></i>
                 </button>
-            
-                <!-- Botón para ver la carta de presentación -->
+
+                <!-- Button to view cover letter -->
                 <button onclick="document.getElementById('coverLetterViewer').style.display='block';">
                     View Cover Letter <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
             
-            <!-- Visor del CV -->
+            <!-- Resume Viewer -->
             <div id="cvViewer" style="display:none;">
                 <iframe src="img/JohanaRomero_Resume.pdf" width="100%" height="500px"></iframe>
                 <button onclick="document.getElementById('cvViewer').style.display='none';">Close</button>
             </div>
             
-            <!-- Visor de la carta de presentación -->
+            <!-- Cover Letter Viewer -->
             <div id="coverLetterViewer" style="display:none;">
                 <iframe src="img/img/JohanaRomero_CoverLetter.pdf" width="100%" height="500px"></iframe>
                 <button onclick="document.getElementById('coverLetterViewer').style.display='none';">Close</button>
@@ -127,50 +126,50 @@
         </div>
     </section>
 
-    <!-- SECCION SKILLS -->
+    <!-- SKILLS SECTION -->
     <section class="skills" id="skills">
-        <div class="contenido-seccion">
+        <div class="section-content">
             <h2>Skills</h2>
-            <div class="fila">
-                <!-- Technical Skill -->
+            <div class="row">
+                <!-- Technical Skills -->
                 <div class="col">
                     <h3>Technical Skills</h3>
                     <div class="skill">
                         <span>Javascript</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>60%</span>
                             </div>
                         </div>
                     </div>
                     <div class="skill">
                         <span>HTML & CSS</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>80%</span>
                             </div>
                         </div>
                     </div>
                     <div class="skill">
                         <span>Secure Remote Access</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>99%</span>
                             </div>
                         </div>
                     </div>
                     <div class="skill">
                         <span>Networking Basics & System Monitoring</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>99%</span>
                             </div>
                         </div>
                     </div>
                     <div class="skill">
                         <span>Customer Service & Call Center Support</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>99%</span>
                             </div>
                         </div>
@@ -180,41 +179,41 @@
                 <div class="col">
                     <h3>Professional Skills</h3>
                     <div class="skill">
-                        <span>Comunication</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <span>Communication</span>
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>90%</span>
                             </div>
                         </div>
                     </div>
                     <div class="skill">
                         <span>Teamwork</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>90%</span>
                             </div>
                         </div>
                     </div>
                     <div class="skill">
                         <span>Creativity</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>99%</span>
                             </div>
                         </div>
                     </div>
                     <div class="skill">
                         <span>Dedication</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>99%</span>
                             </div>
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Proyect Management</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
+                        <span>Project Management</span>
+                        <div class="skill-bar">
+                            <div class="progress">
                                 <span>99%</span>
                             </div>
                         </div>
@@ -224,129 +223,110 @@
         </div>
     </section>
 
-    <!-- SECCION CURRICULUM -->
-    <section id="curriculum" class="curriculum">
-        <div class="contenido-seccion">
-            <h2>Curriculum</h2>
-            <div class="fila">
-                <div class="col izquierda">
+    <!-- RESUME SECTION -->
+    <section id="resume" class="resume">
+        <div class="section-content">
+            <h2>Resume</h2>
+            <div class="row">
+                <div class="col left">
                     <h3>Education</h3>
-                    <div class="item izq">
+                    <div class="item left">
                         <h4>Computer Programming and Analysis</h4>
-                        <span class="casa">George Brown College</span>
-                        <span class="fecha">2022 - 2025</span>
-                        <p>Currently pursuing a degree in Computer Programming and Analysis, focusing on software development, system analysis, and database management.</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
+                        <span class="school">George Brown College</span>
+                        <span class="dates">2022 - 2025</span>
+                        <p>Degree in Computer Programming and Analysis, focusing on software development, system analysis, and database management.</p>
+                        <div class="connector">
+                            <div class="circle"></div>
                         </div>
                     </div>
-                    <div class="item izq">
+                    <div class="item left">
                         <h4>Technology in Design and Business Management</h4>
-                        <span class="casa">Santander Institute of Technology, Colombia</span>
-                        <span class="fecha">2018 - 2022</span>
+                        <span class="school">Santander Institute of Technology, Colombia</span>
+                        <span class="dates">2018 - 2022</span>
                         <p>Graduated with a degree in Design and Business Management, specializing in project management and creating digital solutions for businesses.</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
+                        <div class="connector">
+                            <div class="circle"></div>
                         </div>
                     </div>
-                    <div class="item izq">
-                        <h4>Cysco CCNA1 and CCNA2</h4>
-                        <span class="casa">Santander Institute of Technology, Colombia</span>
-                        <span class="fecha">2014</span>
-                        <p>Understand and describe the devices and services supporting data network and Internet communications, the function of protocol layers in data networks, and the importance of addressing and naming schemes in IPv4 and IPv6 networks. Additionally, design, calculate, and apply subnet masks and addresses to meet specific requirements in both IPv4 and IPv6.</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
+                    <div class="item left">
+                        <h4>Cisco CCNA1 and CCNA2</h4>
+                        <span class="school">Santander Institute of Technology, Colombia</span>
+                        <span class="dates">2014</span>
+                        <p>Understanding and describing devices and services supporting data networks and Internet communications, including the function of protocol layers in data networks, addressing, and naming schemes in IPv4 and IPv6 networks.</p>
+                        <div class="connector">
+                            <div class="circle"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col derecha">
+                <div class="col right">
                     <h3>Work Experience</h3>
-                    <div class="item der">
+                    <div class="item right">
                         <h4>Pre-Weigh Operator</h4>
-                        <span class="casa">Estee Lauder Company – Manpower</span>
-                        <span class="fecha">March 2022 – Present</span>
+                        <span class="company">Estee Lauder Company – Manpower</span>
+                        <span class="dates">March 2022 – Present</span>
                         <p>Ensured compliance with safety regulations and GMP (Good Manufacturing Practices) guidelines.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
+                        <div class="connector">
+                            <div class="circle"></div>
                         </div>
                     </div>
-                    <div class="item der">
+                    <div class="item right">
                         <h4>Customer Service Representative</h4>
-                        <span class="casa">LCBO</span>
-                        <span class="fecha">November 2022 – December 2022</span>
-                        <p>Managed cash transactions and retail sales.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
+                        <span class="company">LCBO</span>
+                        <span class="dates">November 2019 – November 2021</span>
+                        <p>Provided exceptional customer service by assisting customers with orders and inquiries while promoting company products.</p>
+                        <div class="connector">
+                            <div class="circle"></div>
                         </div>
                     </div>
-                    <div class="item der">
-                        <h4>Technical Support and Supervisor</h4>
-                        <span class="casa">Edusys Systems / Atento Colombia (Telefónica)</span>
-                        <span class="fecha">October 2014 – December 2021</span>
-                        <p>Supervised and provided technical support for teams. Troubleshot IT issues via phone and remote tools (Anydesk, LogMeIn), assisted professors with platform issues (Zoom, Microsoft Teams), and ensured productivity and compliance with SLAs. Evaluated performance, provided feedback, and generated operational reports.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
+                    <div class="item right">
+                        <h4>Service Desk Analyst</h4>
+                        <span class="company">Edusys Systems</span>
+                        <span class="dates">July 2018 – August 2019</span>
+                        <p>Provided remote and on-site technical support for end-users, ensuring a seamless resolution of IT issues.</p>
+                        <div class="connector">
+                            <div class="circle"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- SECCION CONTACTO -->
-    <section id="contacto" class="contacto">
-        <div class="contenido-seccion">
-            <h2>CONTACT</h2>
-            <div class="fila">
-                <!-- Formulario -->
-                <div class="col">
-                    <input type="text" placeholder="Name">
-                    <input type="text" placeholder="Phone">
-                    <input type="text" placeholder="Email">
-                    <input type="text" placeholder="About - Message">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                    <button>
-                        Send Message<i class="fa-solid fa-paper-plane"></i>
-                        <span class="overlay"></span>
-                    </button>
-                </div>
-                <!-- Mapa -->
-                <div class="col">
-                    <img src="img/ubicacion.png" alt="">
-                    <div class="info">
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                2800 Courtice Rd, Ontario, Canada
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                Phone: +1647-291 4782 
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-envelope"></i>
-                                Email: johana1221@hotmail.com
-                            </li>
-                        </ul>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <div class="section-content">
+            <h2>Contact</h2>
+            <form id="contact-form" onsubmit="return showMessageSent(event)">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col">
+                        <input type="email" name="email" placeholder="Email Address" required>
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                </div>
+                <button type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <!-- Message confirmation -->
+            <p id="message-sent" style="display:none; color: green; font-weight: bold; margin-top: 20px;">
+                Your message has been sent successfully!
+            </p>
         </div>
     </section>
 
-    <!-- footer -->
-    <footer>
-        <a href="#inicio" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-        <div class="redes">
-           
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-solid fa-rss"></i></a>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script>
+        function showMessageSent(event) {
+            event.preventDefault();
+            document.getElementById('message-sent').style.display = 'block';
+            document.getElementById('contact-form').reset();
+            return false;
+        }
+    </script>
 </body>
 </html>

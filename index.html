@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Portfolio</title>
+    <title>Johana Romero - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,14 +17,14 @@
             </div>
             <nav id="nav">
                 <ul>
-                    <li><a href="#home" onclick="select()">HOME</a></li>
-                    <li><a href="#about" onclick="select()">ABOUT ME</a></li>
-                    <li><a href="#skills" onclick="select()">SKILLS</a></li>
-                    <li><a href="#resume" onclick="select()">RESUME</a></li>
-                    <li><a href="#contact" onclick="select()">CONTACT</a></li>
+                    <li><a href="#home" onclick="selectMenuItem()">HOME</a></li>
+                    <li><a href="#about" onclick="selectMenuItem()">ABOUT ME</a></li>
+                    <li><a href="#skills" onclick="selectMenuItem()">SKILLS</a></li>
+                    <li><a href="#resume" onclick="selectMenuItem()">RESUME</a></li>
+                    <li><a href="#contact" onclick="selectMenuItem()">CONTACT</a></li>
                 </ul>
             </nav>
-            <div class="nav-responsive" onclick="toggleMenu()">
+            <div class="nav-responsive" onclick="toggleMobileMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </header>
@@ -34,13 +34,13 @@
     <section id="home" class="home">
         <div class="banner-content">
             <div class="img-container">
-                <img src="img/hero.png" alt="">
+                <img src="img/hero.png" alt="Johana Romero">
             </div>
             <h1>Johana Romero</h1>
             <h2>Diploma in Business Management and Design Technology - Advanced Diploma in Computer Programming and Analysis</h2>
             <div class="social-media">
-                <a href="https://x.com/LizetteE10560"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/lizettejohanaromero/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://x.com/LizetteE10560" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/lizettejohanaromero/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="#"><i class="fa-solid fa-rss"></i></a>
             </div>
         </div>
@@ -50,7 +50,7 @@
     <section id="about" class="about">
         <div class="section-content">
             <h2>About Me</h2>
-            <p><span>Hello, I'm Johana Romero.</span> I’m a passionate Technologist in Business Management and Design. I enjoy turning complex problems into simple, beautiful, and intuitive designs. I’m constantly learning and improving to stay up-to-date with the latest technologies and trends.</p>
+            <p><span>Hello, I'm Johana Romero.</span> I'm a passionate Technologist in Business Management and Design. I enjoy turning complex problems into simple, beautiful, and intuitive designs. I'm constantly learning and improving to stay up-to-date with the latest technologies and trends.</p>
 
             <div class="row">
                 <!-- Personal Info -->
@@ -100,29 +100,23 @@
                 </div>
             </div>
             <div class="button-container">
-                <!-- Button to view resume -->
-                <button onclick="document.getElementById('cvViewer').style.display='block';">
+                <button onclick="showDocument('cvViewer')">
                     View Resume <i class="fa-solid fa-eye"></i>
                 </button>
-
-                <!-- Button to view cover letter -->
-                <button onclick="document.getElementById('coverLetterViewer').style.display='block';">
+                <button onclick="showDocument('coverLetterViewer')">
                     View Cover Letter <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
             
-            <!-- Resume Viewer -->
-            <div id="cvViewer" style="display:none;">
+            <div id="cvViewer" class="document-viewer">
                 <iframe src="img/JohanaRomero_Resume.pdf" width="100%" height="500px"></iframe>
-                <button onclick="document.getElementById('cvViewer').style.display='none';">Close</button>
+                <button onclick="hideDocument('cvViewer')">Close</button>
             </div>
             
-            <!-- Cover Letter Viewer -->
-            <div id="coverLetterViewer" style="display:none;">
+            <div id="coverLetterViewer" class="document-viewer">
                 <iframe src="img/JohanaRomero_CoverLetter.pdf" width="100%" height="500px"></iframe>
-                <button onclick="document.getElementById('coverLetterViewer').style.display='none';">Close</button>
+                <button onclick="hideDocument('coverLetterViewer')">Close</button>
             </div>
-            
         </div>
     </section>
 
@@ -137,7 +131,7 @@
                     <div class="skill">
                         <span>Javascript</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress javascript">
                                 <span>60%</span>
                             </div>
                         </div>
@@ -145,7 +139,7 @@
                     <div class="skill">
                         <span>HTML & CSS</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress htmlcss">
                                 <span>80%</span>
                             </div>
                         </div>
@@ -153,7 +147,7 @@
                     <div class="skill">
                         <span>Secure Remote Access</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress secure-access">
                                 <span>99%</span>
                             </div>
                         </div>
@@ -161,7 +155,7 @@
                     <div class="skill">
                         <span>Networking Basics & System Monitoring</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress networking">
                                 <span>99%</span>
                             </div>
                         </div>
@@ -169,7 +163,7 @@
                     <div class="skill">
                         <span>Customer Service & Call Center Support</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress customer-service">
                                 <span>99%</span>
                             </div>
                         </div>
@@ -181,7 +175,7 @@
                     <div class="skill">
                         <span>Communication</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress communication">
                                 <span>90%</span>
                             </div>
                         </div>
@@ -189,7 +183,7 @@
                     <div class="skill">
                         <span>Teamwork</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress teamwork">
                                 <span>90%</span>
                             </div>
                         </div>
@@ -197,7 +191,7 @@
                     <div class="skill">
                         <span>Creativity</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress creativity">
                                 <span>99%</span>
                             </div>
                         </div>
@@ -205,7 +199,7 @@
                     <div class="skill">
                         <span>Dedication</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress dedication">
                                 <span>99%</span>
                             </div>
                         </div>
@@ -213,7 +207,7 @@
                     <div class="skill">
                         <span>Project Management</span>
                         <div class="skill-bar">
-                            <div class="progress">
+                            <div class="progress project-management">
                                 <span>99%</span>
                             </div>
                         </div>
@@ -294,72 +288,103 @@
     </section>
 
     <!-- CONTACT SECTION -->
-<form action="https://formsubmit.co/johana1221@hotmail.com" method="POST" id="contact-form">
-    <!-- Campos ocultos importantes -->
-    <input type="hidden" name="_to" value="johana1221@hotmail.com">
-    <input type="hidden" name="_template" value="box">
-    <input type="text" name="_honey" style="display:none">  <!-- Anti-spam -->
-    
-    <!-- Esto evita la redirección y mantiene en tu página -->
-    <input type="hidden" name="_next" value="#contact"> 
-    
-    <!-- Tus campos de formulario existentes -->
-    <div class="row">
-        <div class="col">
-            <input type="text" name="name" placeholder="Your Name" required>
+    <section id="contact" class="contact">
+        <div class="section-content">
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <input type="hidden" name="_to" value="johana1221@hotmail.com">
+                <input type="hidden" name="_subject" value="New message from your portfolio">
+                <input type="text" name="_honey" style="display:none">
+                
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" id="submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <p id="message-sent" style="display:none; color: #1CB698; font-weight: bold; margin-top: 20px;">
+                Your message has been sent successfully!
+            </p>
         </div>
-        <div class="col">
-            <input type="email" name="email" placeholder="Email Address" required>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <textarea name="message" placeholder="Your Message" required></textarea>
-        </div>
-    </div>
-    <button type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-</form>
+    </section>
 
-<script>
-<script>
-document.getElementById('contact-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    
-    try {
-        // Envía los datos a FormSubmit
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-        
-        if (response.ok) {
-            // Muestra mensaje de éxito
-            document.getElementById('message-sent').style.display = 'block';
-            form.reset();
-            
-            // Oculta el mensaje después de 5 segundos
-            setTimeout(() => {
-                document.getElementById('message-sent').style.display = 'none';
-            }, 5000);
-            
-            // Opcional: Hacer scroll suave al mensaje
-            document.getElementById('message-sent').scrollIntoView({
-                behavior: 'smooth'
-            });
-        } else {
-            throw new Error('Error al enviar el mensaje');
+    <script>
+        // Document Viewer Functions
+        function showDocument(viewerId) {
+            document.getElementById(viewerId).style.display = 'block';
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Hubo un error al enviar tu mensaje. Por favor inténtalo de nuevo.');
-    }
-});
-</script>
+
+        function hideDocument(viewerId) {
+            document.getElementById(viewerId).style.display = 'none';
+        }
+
+        // Navigation Functions
+        function selectMenuItem() {
+            // Add your menu selection logic here
+            console.log("Menu item selected");
+        }
+
+        function toggleMobileMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('responsive');
+        }
+
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = document.getElementById('submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            
+            // Using FormSubmit.co
+            fetch('https://formsubmit.co/ajax/johana1221@hotmail.com', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Show success message
+                document.getElementById('message-sent').style.display = 'block';
+                form.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('message-sent').style.display = 'none';
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to send message. Please try again.');
+            })
+            .finally(() => {
+                // Restore button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            });
+        });
+
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any initialization code here
+            console.log("Portfolio loaded");
+        });
+    </script>
 </body>
 </html>

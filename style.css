@@ -325,6 +325,54 @@ html {
     transform: translateX(50%);
 }
 
+/* Skills Section - Animated */
+.skills .skill-bar {
+    height: 8px;
+    width: 100%;
+    background-color: #131517;
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 4px;
+    overflow: visible;
+}
+
+.skills .progress {
+    background-color: #1CB698;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+    width: 0;
+    transition: width 2s ease-in-out;
+}
+
+.skills .percentage {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #1CB698;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    top: -16px;
+    right: -20px;
+    font-size: 14px;
+    font-weight: bold;
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+    transition-delay: 1.5s;
+}
+
+/* Cuando la animación está activa */
+.skills .animate .progress {
+    width: var(--target-width);
+}
+
+.skills .animate .percentage {
+    transform: scale(1);
+}
+
 /* Resume Section */
 .resume {
     background-color: #1e2326;

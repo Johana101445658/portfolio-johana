@@ -397,5 +397,46 @@
             console.log("Portfolio loaded");
         });
     </script>
+    <script>
+// Animar barras de habilidades al hacer scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const skillsSection = document.querySelector('.skills');
+    const skillBars = document.querySelectorAll('.progress');
+    
+    // Configurar anchos objetivos
+    const targetWidths = {
+        'js-progress': '60%',
+        'html-progress': '80%',
+        'secure-progress': '99%',
+        'network-progress': '99%',
+        'service-progress': '99%',
+        'comm-progress': '90%',
+        'team-progress': '90%',
+        'creative-progress': '99%',
+        'dedicate-progress': '99%',
+        'project-progress': '99%'
+    };
+    
+    // Asignar anchos objetivos
+    skillBars.forEach(bar => {
+        const progressClass = bar.classList[1];
+        bar.style.setProperty('--target-width', targetWidths[progressClass]);
+    });
+    
+    // Observador de intersección
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                skillsSection.querySelectorAll('.progress').forEach(bar => {
+                    bar.classList.add('animate');
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.5});
+    
+    observer.observe(skillsSection);
+});
+</script>
 </body>
 </html>
